@@ -1,0 +1,23 @@
+{
+  "name": "dostavka24",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SasimovichAndrey/24dostavka.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SasimovichAndrey/24dostavka/issues"
+  },
+  "homepage": "https://github.com/SasimovichAndrey/24dostavka#readme",
+  "dependencies": {
+    "connect": "^3.6.5",
+    "serve-static": "^1.13.1"
+  }
+}
