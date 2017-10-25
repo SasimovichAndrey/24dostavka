@@ -97,7 +97,18 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+header{
+    background-color: aqua;
+}
 
+.navbar-toggle{
+    float:left;
+    width:100%;
+}
+
+.navbar-default .navbar-toggle{
+    border:none;
+}
 
 
 
