@@ -11,9 +11,9 @@
    ========================================================================== */
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 /*
@@ -27,13 +27,13 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /*
@@ -41,12 +41,12 @@ html {
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 /*
@@ -55,13 +55,8 @@ hr {
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
 }
 
 /*
@@ -69,9 +64,9 @@ video {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -79,7 +74,7 @@ fieldset {
  */
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 /* ==========================================================================
@@ -87,96 +82,139 @@ textarea {
    ========================================================================== */
 
 .browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-header{
-    background-color: aqua;
-    background-color: #ee5f38;
+header {
+  background-color: aqua;
+  background-color: #ee5f38;
 }
 
-#header{
-    padding:10px 0 10px 0;
-    color:white;
-    font-weight: bold;
-}   
-
-#logo-image{
-    height: 100px;
+#header {
+  padding: 10px 0 10px 0;
+  color: white;
+  font-weight: bold;
 }
 
-.navbar{
-    border:none;
-    border-radius: 0;
-    background-color: #f06b4a;
-}
-.navbar a{
-    color:white;
-    font-weight: bold;
+#logo-image {
+  height: 100px;
 }
 
-.nav > li > a:hover{
-    background-color: #f57352;
+.navbar {
+  border: none;
+  border-radius: 0;
+  background-color: #f06b4a;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  transition: background .3s ease-in-out, padding-top .3s ease-in-out, padding-bottom .3s;
+  letter-spacing: 1px;
+  font-family: Cabin, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
+  text-transform: uppercase;
 }
 
-.navbar-toggle{
-    float:left;
-    width:100%;
-    color:white;
-    font-weight: bold;
+.navbar.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  -webkit-box-shadow: 0px -2px 35px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -2px 35px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -2px 35px 0px rgba(0, 0, 0, 0.75);
 }
 
-.navbar-default .navbar-toggle{
-    border:none;
+.navbar a {
+  color: white;
+  font-weight: bold;
 }
 
-#wk-widget-row{
-    padding-top:10px;
+.nav>li>a:hover {
+  background-color: #f57352;
+}
+
+.navbar-toggle {
+  float: left;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+}
+
+#wk-widget-row {
+  padding-top: 10px;
 }
 
 #social a {
-    margin-right:5px;
+  margin-right: 5px;
 }
 
-#phones, #social{
-    margin-top:10px;
+#phones, #social {
+  margin-top: 10px;
 }
 
-#order-call-button{
-    margin-top:20px;
-    width:100%;
+#order-call-button {
+  margin-top: 20px;
+  width: 100%;
 }
 
-.site-button-1{
-    background-color:#F19981;
-    padding: 10px;
-    border:none;
-    float:right;
-    font-size:1.2em;
+#scroll {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#f06b4a;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff
+}
+#scroll:hover {
+    background-color:#f57352;
+    opacity:1;
+    filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
 }
 
+.site-button-1 {
+  background-color: #F19981;
+  padding: 10px;
+  border: none;
+  float: right;
+  font-size: 1.2em;
+}
 
-
-
-@media (max-width: 767px) { 
-    #logo-col{
-        text-align: center;
-    }
-
-    .navbar-toggle{
-        background-color: #f06b4a;
-    }
- }
-
-
-
+@media (max-width: 767px) {
+  #logo-col {
+    text-align: center;
+  }
+  .navbar-toggle {
+    background-color: #f06b4a;
+  }
+}
 
 /* ==========================================================================
    Helper classes
@@ -187,7 +225,7 @@ header{
  */
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 /*
@@ -200,17 +238,18 @@ header{
  */
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */
 }
 
 /*
@@ -219,17 +258,16 @@ header{
  * https://www.drupal.org/node/897638
  */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    -webkit-clip-path: none;
-    clip-path: none;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  -webkit-clip-path: none;
+  clip-path: none;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
 }
 
 /*
@@ -237,7 +275,7 @@ header{
  */
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /*
@@ -252,14 +290,15 @@ header{
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /* ==========================================================================
@@ -269,14 +308,11 @@ header{
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+  /* Style adjustments for viewports that meet the condition */
 }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -286,71 +322,52 @@ header{
    ========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+  *, *:before, *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a, a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
+  a[href^="#"]:after, a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  thead {
+    display: table-header-group;
+  }
+  tr, img {
+    page-break-inside: avoid;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
 }
