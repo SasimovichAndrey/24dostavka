@@ -101,6 +101,10 @@ header{
     background-color: aqua;
 }
 
+#header{
+    padding:10px 0 10px 0;
+}
+
 .navbar-toggle{
     float:left;
     width:100%;
@@ -110,11 +114,13 @@ header{
     border:none;
 }
 
+#social a {
+    margin-right:5px;
+}
 
-
-
-
-
+#phones, #social{
+    margin-top:10px;
+}
 
 
 
