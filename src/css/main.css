@@ -99,19 +99,46 @@ textarea {
 
 header{
     background-color: aqua;
+    background-color: #ee5f38;
 }
 
 #header{
     padding:10px 0 10px 0;
+    color:white;
+    font-weight: bold;
+}   
+
+#logo-image{
+    height: 100px;
+}
+
+.navbar{
+    border:none;
+    border-radius: 0;
+    background-color: #f06b4a;
+}
+.navbar a{
+    color:white;
+    font-weight: bold;
+}
+
+.nav > li > a:hover{
+    background-color: #f57352;
 }
 
 .navbar-toggle{
     float:left;
     width:100%;
+    color:white;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-toggle{
     border:none;
+}
+
+#wk-widget-row{
+    padding-top:10px;
 }
 
 #social a {
@@ -125,7 +152,15 @@ header{
 
 
 
+@media (max-width: 767px) { 
+    #logo-col{
+        text-align: center;
+    }
 
+    .navbar-toggle{
+        background-color: #f06b4a;
+    }
+ }
 
 
 
