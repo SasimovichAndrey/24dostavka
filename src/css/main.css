@@ -149,6 +149,19 @@ header{
     margin-top:10px;
 }
 
+#order-call-button{
+    margin-top:20px;
+    width:100%;
+}
+
+.site-button-1{
+    background-color:#F19981;
+    padding: 10px;
+    border:none;
+    float:right;
+    font-size:1.2em;
+}
+
 
 
 
