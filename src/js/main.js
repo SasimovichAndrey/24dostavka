@@ -3,6 +3,12 @@ var backendService = new BackendServiceFake();
 
 $("#order-call-popup-page2").hide();
 
+checkWidth();
+
+$(window).on('resize', function() {
+  checkWidth();
+});
+
 $("#order-call-popup").dialog({
   title: "Заказать звонок",
   autoOpen: false,
@@ -35,19 +41,28 @@ $('#order-call-button').click(function(event) {
   event.preventDefault();
 });
 
-$(window).bind('scroll', function () {
-    if ($(window).scrollTop() > 100) {
-        $('.navbar').addClass('fixed');
-				$('#scroll').fadeIn();
-    } else {
-        $('.navbar').removeClass('fixed');
-				$('#scroll').fadeOut();
-    }
+$(window).bind('scroll', function() {
+  var width = $(window).width();
+  var scrollValueForFixedMenu = 100;
+  if (width < 768) {
+    scrollValueForFixedMenu = 250;
+  }
+
+  if ($(window).scrollTop() > scrollValueForFixedMenu) {
+    $('.navbar').addClass('fixed');
+    $('#scroll').fadeIn();
+  } else {
+    $('.navbar').removeClass('fixed');
+    $('#scroll').fadeOut();
+  }
 });
 
-$('#scroll').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
+
+$('#scroll').click(function() {
+  $("html, body").animate({
+    scrollTop: 0
+  }, 600);
+  return false;
 });
 
 // Call order form validation
@@ -66,3 +81,14 @@ $('#order-call-form').validator().on('submit', function (e) {
     })
   }
 })
+
+function checkWidth() {
+  var width = $(window).width();
+  if (width > 768) {
+    $("body").removeAttr('class');
+    $("body").addClass("desktop")
+  } else {
+    $("body").removeAttr('class');
+    $("body").addClass("mobile")
+  }
+}
