@@ -1,4 +1,5 @@
-var backendBaseUrl = "backend/"
+var backendBaseUrl = "backend/";
+var backendService = new BackendServiceFake();
 
 $("#order-call-popup-page2").hide();
 
@@ -59,14 +60,9 @@ $('#order-call-form').validator().on('submit', function (e) {
     e.preventDefault();
 
     var data = $(this).serialize()
-    $.ajax({
-      url: backendBaseUrl + "mail.php", 
-      data: data,
-      type: "POST",
-      success: function(){
-        $("#order-call-popup-page1").hide();
-        $("#order-call-popup-page2").show();
-      }
-    });
+    backendService.sendMail(data, function(){
+      $("#order-call-popup-page1").hide();
+      $("#order-call-popup-page2").show();
+    })
   }
 })
