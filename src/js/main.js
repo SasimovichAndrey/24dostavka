@@ -84,7 +84,7 @@ $('#order-call-form').validator().on('submit', function (e) {
 
 function checkWidth() {
   var width = $(window).width();
-  if (width > 768) {
+  if (width >= 768) {
     $("body").removeAttr('class');
     $("body").addClass("desktop")
   } else {
