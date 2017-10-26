@@ -1,16 +1,11 @@
+$("#order-call-popup-page2").hide();
+
 $("#order-call-popup").dialog({
+  title: "Заказать звонок",
   autoOpen: false,
   modal: true,
-  buttons: {
-    "Заказать звонок": function() {
-      $(this).dialog("close");
-    },
-    "Отмена": function() {
-      $(this).dialog("close");
-    }
-  },
   show: {
-    effect: "fadeIn",
+    effect: "drop",
     duration: 400
   },
   hide: {
@@ -18,8 +13,19 @@ $("#order-call-popup").dialog({
     duration: 400
   },
   resizable: false,
-  draggable: false
+  draggable: false,
+  classes: {
+    "ui-dialog": "fixed-dialog"
+  },
+
+  close: function(){
+    $("#order-call-popup-page2").hide();
+    $("#order-call-popup-page1").show();
+
+    $("#order-call-form input[type=text]").val("");
+  }
 });
+
 
 $('#order-call-button').click(function(event) {
   $('#order-call-popup').dialog("open");
@@ -40,3 +46,15 @@ $('#scroll').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
 });
+
+// Call order form validation
+$('#order-call-form').validator();
+
+$('#order-call-form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    $("#order-call-popup-page1").hide();
+    $("#order-call-popup-page2").show();
+  }
+})
