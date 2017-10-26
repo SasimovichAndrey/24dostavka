@@ -1,3 +1,5 @@
+var backendBaseUrl = "backend/"
+
 $("#order-call-popup-page2").hide();
 
 $("#order-call-popup").dialog({
@@ -54,7 +56,17 @@ $('#order-call-form').validator().on('submit', function (e) {
   if (e.isDefaultPrevented()) {
     // handle the invalid form...
   } else {
-    $("#order-call-popup-page1").hide();
-    $("#order-call-popup-page2").show();
+    e.preventDefault();
+
+    var data = $(this).serialize()
+    $.ajax({
+      url: backendBaseUrl + "mail.php", 
+      data: data,
+      type: "POST",
+      success: function(){
+        $("#order-call-popup-page1").hide();
+        $("#order-call-popup-page2").show();
+      }
+    });
   }
 })
