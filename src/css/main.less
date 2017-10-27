@@ -161,17 +161,22 @@ header {
   margin-right: 5px;
 }
 
-#phones, #social {
+#phones, #social, #working-hours {
   margin-top: 10px;
+}
+
+#phones img{
+  height: 32px;
 }
 
 #order-call-button {
   margin-top: 20px;
   width: 100%;
+  float: right;
 }
 
-section{
-  padding-bottom:20px;
+#quick-order-button{
+  border-radius: 4px;
 }
 
 .ui-dialog{
@@ -197,6 +202,7 @@ section{
     -moz-border-radius:5px;
     border-radius:5px;
 }
+
 #scroll span {
     position:absolute;
     top:50%;
@@ -220,7 +226,6 @@ section{
   color:white !important;
   padding: 10px;
   border: none;
-  float: right;
 
   font-size: 1.2em;
 }
@@ -242,12 +247,28 @@ section{
   text-align: center;
 }
 
+.order-alg-step img{
+  width:200px;
+}
+
+.step-text, .step-illustr{
+  text-align: justify;
+}
+
+.section-row{
+  padding: 10px 0 10px 0; 
+}
+
 @media (max-width: 767px) {
   #logo-col {
     text-align: center;
   }
   .navbar-toggle {
     background-color: @navbarColor;
+  }
+
+  .step-illustr{
+    text-align: center;
   }
 }
 
