@@ -14,15 +14,19 @@
                 case "callOrder":
                     $bodyText = MailBodyComposer::getCallOrderBody();
                     $subject = MailBodyComposer::getCallOrderSubject();
+                    break;
                 case "getPrice":
                     $bodyText = MailBodyComposer::getGetPriceBody();
                     $subject = MailBodyComposer::getGetPriceSubject();
+                    break;
                 case "quickOrder":
                     $bodyText = MailBodyComposer::getQuickOrderBody();
                     $subject = MailBodyComposer::getQuickOrderSubject();
+                    break;
                 case "question":
                     $bodyText = MailBodyComposer::getQuestionBody();
                     $subject = MailBodyComposer::getQuestionSubject();
+                    break;
             }
             
             $mail = new PHPMailer(true);

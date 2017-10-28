@@ -11,7 +11,7 @@ function BackendService(){
 
 function BackendServiceFake(){
     this.sendMail = function(data, successFunc){
-        successFunc();
+        window.setTimeout(successFunc, 2000);
     }
 }
 

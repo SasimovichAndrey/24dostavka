@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/jquery-ui.css"/>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet/less" href="css/main.less">
+        <link rel="stylesheet" href="css/loader.css">
 
         <script src="js/vendor/less.min.js"></script>
     </head>
@@ -144,7 +145,8 @@
                     <div class="col-xs-12 col-md-7" style="background-color: rgb(235, 222, 219)">
                         <h1>Узнать цену</h1>
                         Заполните форму и мы поможем найти интересующий вас товар по оптимальной цене и доставим его в течение 7 дней.
-                        <form id="price-form">
+                        <form id="get-price-form">
+                            <input type="hidden" name="emailType" value="getPrice"/>
                             <div class="form-group">
                                 <label for="productTitle">Модель товара</label>
                                 <input type="text" required class="form-control" name="productTitle" placeholder="Кеды Converse AllStar">
@@ -153,7 +155,12 @@
                                 <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
                                 <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
                             </div>
-                            <button type="submit" id="submit-order-price-request-button" class="btn site-button-1" style="width:100%">Узнать цену</button>
+                            <button type="submit" id="submit-order-price-request-button" class="btn site-button-1" style="width:100%">
+                                <div>
+                                    <span id="get-price-button-text">Узнать цену</span>
+                                    <div id="get-price-loader">&nbsp;</div>
+                                </div>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -219,7 +226,8 @@
                         <div class="col-xs-12 col-md-9" style="background-color: rgb(235, 222, 219)">
                             <h1>Задайте нам вопрос</h1>
                             Если у Вас остались вопросы - Вы можете задать их с помощью формы ниже.
-                            <form id="price-form">
+                            <form id="questions-form">
+                                <input type="hidden" name="emailType" value="question"/>
                                 <div class="form-group">
                                     <label for="question">Ваш вопрос</label>
                                     <input type="text" required class="form-control" name="question" placeholder="Ваш вопрос">
@@ -228,7 +236,12 @@
                                     <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
                                     <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
                                 </div>
-                                <button type="submit" id="submit-question-button" class="btn site-button-1" style="width:100%">Спросить</button>
+                                <button type="submit" id="submit-question-button" class="btn site-button-1" style="width:100%">
+                                    <div>
+                                        <span id="questions-form-button-text">Спросить</span>
+                                        <div id="questions-form-button-loader">&nbsp;</div>
+                                    </div>
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -250,6 +263,7 @@
             <div id="order-call-popup-page1">
                 <h4>Пожалуйста, заполните форму и мы Вам перезвоним</h4>
                 <form id="order-call-form">
+                    <input type="hidden" name="emailType" value="callOrder"/>
                     <div class="form-group">
                         <label for="customerName">Ваше имя</label>
                         <input type="text" required class="form-control" name="customerName" placeholder="Игорь">
@@ -258,7 +272,12 @@
                         <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
                         <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
                     </div>
-                    <button type="submit" id="submit-call-button" class="btn site-button-1">Жду звонка!</button>
+                    <button type="submit" id="submit-call-button" class="btn site-button-1">
+                        <div>
+                            <span id="call-order-form-button-text">Жду звонка</span>
+                            <div id="call-order-form-button-loader">&nbsp;</div>
+                        </div>
+                    </button>
                 </form>
             </div>
             <div id="order-call-popup-page2">
@@ -268,26 +287,38 @@
         </div>
 
         <div id="quick-order-popup">
-            <h4>Форма быстрого заказа</h4>
-            <form id="quick-order-form">
-                <div class="form-group">
-                    <label for="productUrl">Вставьте сюда ссылк(у/и) на страницу товара:</label>
-                    <textarea type="text" required class="form-control" name="productUrl" placeholder="http://allegro.pl/buty-swiecace-led-sportowe-podswietlane-adidasy-i6732936520.html"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="productDescription">Напишите сюда описание к товару:</label>
-                    <textarea type="text" required class="form-control" name="productDescription" placeholder="Размер кросовок: 42 EU"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
-                    <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
-                </div>
-                <div class="form-group">
-                    <label for="email">Ваш E-mail</label>
-                    <input type="email" required class="form-control" name="email" placeholder="ivan.taranov@mail.ru">
-                </div>
-                <button type="submit" id="submit-call-button" class="btn site-button-1">Заказать</button>
-            </form>
+            <div id="quick-order-popup-page1">
+                <h4>Форма быстрого заказа</h4>
+                <form id="quick-order-form">
+                    <input type="hidden" name="emailType" value="quickOrder"/>
+                    <div class="form-group">
+                        <label for="productUrl">Вставьте сюда ссылк(у/и) на страницу товара:</label>
+                        <textarea type="text" required class="form-control" name="productUrl" placeholder="http://allegro.pl/buty-swiecace-led-sportowe-podswietlane-adidasy-i6732936520.html"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Напишите сюда описание к товару:</label>
+                        <textarea type="text" required class="form-control" name="productDescription" placeholder="Размер кросовок: 42 EU"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
+                        <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш E-mail</label>
+                        <input type="email" required class="form-control" name="email" placeholder="ivan.taranov@mail.ru">
+                    </div>
+                    <button type="submit" id="submit-call-button" class="btn site-button-1">
+                        <div>
+                            <span id="quick-order-form-button-text">Заказать</span>
+                            <div id="quick-order-form-button-loader">&nbsp;</div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+            <div id="quick-order-popup-page2">
+                <img src="img/success.png"/><br/>
+                <h4>Ваша заявка принята. Спасибо за заказ!</h4>
+            </div>
         </div>
 
         <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
@@ -300,7 +331,10 @@
         <script src="js/plugins.js"></script>
         <script src="js/backend-service.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/call-order-form.js"></script>
         <script src="js/quick-order-form.js"></script>
+        <script src="js/get-price-form.js"></script>
+        <script src="js/questions-form.js"></script>
 
         <!-- Put this script tag to the <head> of your page -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>
