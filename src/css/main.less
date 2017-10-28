@@ -1,14 +1,6 @@
-/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+@baseColor: #5e4832;
+@baseColorHover: #6c5136;
+@baseColorHoverLight: #826140;
 
 html {
   color: #222;
@@ -16,15 +8,10 @@ html {
   line-height: 1.4;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
+a,
+input {
+  outline: none;
+}
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -36,10 +23,6 @@ html {
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
 hr {
   display: block;
   height: 1px;
@@ -49,57 +32,47 @@ hr {
   padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio, canvas, iframe, img, svg, video {
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
   vertical-align: middle;
 }
-
 /*
  * Remove default fieldset styles.
  */
-
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-
 /*
  * Allow only vertical resizing of textareas.
  */
-
 textarea {
   resize: vertical;
 }
-
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-@baseColor: #ee5f38;
 
 header {
   background-color: @baseColor;
 }
 
 #header {
-  padding: 10px 0 10px 0;
+  padding: 10px 0;
   color: white;
   font-weight: bold;
 }
@@ -108,14 +81,12 @@ header {
   height: 100px;
 }
 
-@navbarColor: #f06b4a;
-
 .navbar {
   border: none;
   border-radius: 0;
-  background-color: @navbarColor;
-  border-bottom: 1px solid rgba(255, 255, 255, .3);
-  transition: background .3s ease-in-out, padding-top .3s ease-in-out, padding-bottom .3s;
+  background-color: @baseColor;
+  border-bottom: 1px solid @baseColorHover;
+  transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
   letter-spacing: 1px;
   font-family: Cabin, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
@@ -128,9 +99,9 @@ header {
   right: 0;
   left: 0;
   z-index: 1030;
-  -webkit-box-shadow: 0px -2px 35px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px -2px 35px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px -2px 35px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0 -2px 35px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 -2px 35px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 -2px 35px 0 rgba(0, 0, 0, 0.75);
 }
 
 .navbar a {
@@ -138,8 +109,10 @@ header {
   font-weight: bold;
 }
 
-.nav>li>a:hover {
-  background-color: #f57352;
+.nav > li > a:focus,
+.nav > li > a:hover {
+  background-color: @baseColorHover;
+  outline: none;
 }
 
 .navbar-toggle {
@@ -161,11 +134,13 @@ header {
   margin-right: 5px;
 }
 
-#phones, #social, #working-hours {
+#phones,
+#social,
+#working-hours {
   margin-top: 10px;
 }
 
-#phones img{
+#phones img {
   height: 32px;
 }
 
@@ -173,137 +148,233 @@ header {
   margin-top: 20px;
   width: 100%;
   float: right;
+  border: 1px solid;
+  border-radius: 10px;
+
+  &:focus,
+  &:hover {
+    background-color: @baseColorHoverLight;
+  }
 }
 
-#quick-order-button{
+#quick-order-button {
   border-radius: 4px;
 }
 
-.ui-dialog{
-  padding:0;
+.ui-dialog {
+  padding: 0;
 }
 
-.ui-widget-header{
+.ui-widget-header {
   background-color: @baseColor;
-  color:white;
+  color: white;
 }
 
 #scroll {
-    position:fixed;
-    right:10px;
-    bottom:10px;
-    cursor:pointer;
-    width:50px;
-    height:50px;
-    background-color: @navbarColor;
-    text-indent:-9999px;
-    display:none;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: @baseColor;
+  text-indent: -9999px;
+  display: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 #scroll span {
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-8px;
-    margin-top:-12px;
-    height:0;
-    width:0;
-    border:8px solid transparent;
-    border-bottom-color:#ffffff
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -12px;
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  border-bottom-color: #ffffff;
 }
+
 #scroll:hover {
-    background-color:#f57352;
-    opacity:1;
-    filter:"alpha(opacity=100)";
-    -ms-filter:"alpha(opacity=100)";
+  background-color: @baseColorHover;
+  opacity: 1;
+  filter:  "alpha(opacity=100)";
+  -ms-filter:  "alpha(opacity=100)";
 }
 
 .site-button-1 {
-  background-color: #F19981;
-  color:white !important;
+  background-color: @baseColorHover;
+  color: white !important;
   padding: 10px;
   border: none;
-
   font-size: 1.2em;
+
+  &:focus,
+  &:hover {
+    background-color: @baseColorHoverLight;
+  }
 }
 
-#submit-call-button{
-  width:100%;
+#submit-call-button {
+  width: 100%;
   border-radius: 0;
   font-weight: bold;
   background-color: @baseColor;
   opacity: 1;
 }
 
-.ui-widget-overlay{
+.ui-widget-overlay {
   background-color: #ccc;
   opacity: 0.5;
 }
 
-#order-call-popup-page2{
+#order-call-popup-page2 {
   text-align: center;
 }
 
-.order-alg-step img{
-  width:200px;
+.order-alg-step img {
+  width: 200px;
 }
 
-.step-text, .step-illustr{
+.step-illustr,
+.step-text {
   text-align: justify;
 }
 
-.section-row{
-  padding: 10px 0 10px 0;
+.section-row {
+  padding: 10px 0;
 }
 
+section {
+  padding: 20px 0;
+
+  .anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+  }
+
+  h1 {
+    font-family: Cabin, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+
+  &.light {
+    background-color: #ebddda;
+    color: #17201c;
+  }
+
+  &.dark {
+    background-color: #886F56;
+    color: azure;
+  }
+
+  &.questions {
+    .image-container {
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+
+  &.services {
+    ul {
+      list-style: none;
+
+      li {
+        margin: 15px 0;
+
+        div {
+          display: inline-block;
+          margin-right: 20px;
+          background-color: #faf4f2;
+          padding: 10px;
+          border-radius: 35px;
+
+          img {
+            max-width: 50px;
+            width: 50px;
+          }
+        }
+
+        span {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &.how_it_work {
+    .order-alg-step {
+      .step-illustr {
+        margin: -50px 0;
+        padding: 50px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .step-text {
+        padding: 100px 75px;
+        font-weight: bold;
+        
+        .site-button-1 {
+          margin: 5px auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 767px) {
   #logo-col {
     text-align: center;
   }
+
   .navbar-toggle {
-    background-color: @navbarColor;
+    background-color: @baseColor;
   }
 
-  .step-illustr{
+  .step-illustr {
     text-align: center;
   }
 
-  .questions{
-    .image-container{
+  .questions {
+    .image-container {
       text-align: center;
 
-      img{
-        width:100%;
+      img {
+        width: 100%;
         max-width: 200px;
       }
     }
   }
 }
-
-@media (min-width: 768px){
-  .fixed-dialog{
+@media (min-width: 768px) {
+  .fixed-dialog {
     position: fixed;
     top: 50px;
     left: 50px;
-    width:400px !important;
+    width: 400px !important;
   }
 }
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
 /*
  * Hide visually and from screen readers
  */
-
 .hidden {
   display: none !important;
 }
-
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -312,7 +383,6 @@ header {
  *    causes content to wrap 1 word per line:
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
-
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -327,14 +397,13 @@ header {
   white-space: nowrap;
   /* 1 */
 }
-
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
   clip: auto;
   -webkit-clip-path: none;
   clip-path: none;
@@ -345,15 +414,12 @@ header {
   width: auto;
   white-space: inherit;
 }
-
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-
 .invisible {
   visibility: hidden;
 }
-
 /*
  * Clearfix: contain floats
  *
@@ -365,8 +431,8 @@ header {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-
-.clearfix:before, .clearfix:after {
+.clearfix:after,
+.clearfix:before {
   content: " ";
   /* 1 */
   display: table;
