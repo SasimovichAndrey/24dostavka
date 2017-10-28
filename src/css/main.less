@@ -234,7 +234,7 @@ header {
   width:100%;
   border-radius: 0;
   font-weight: bold;
-  background-color: @baseColor; 
+  background-color: @baseColor;
   opacity: 1;
 }
 
@@ -256,7 +256,7 @@ header {
 }
 
 .section-row{
-  padding: 10px 0 10px 0; 
+  padding: 10px 0 10px 0;
 }
 
 @media (max-width: 767px) {
@@ -270,13 +270,24 @@ header {
   .step-illustr{
     text-align: center;
   }
+
+  .questions{
+    .image-container{
+      text-align: center;
+
+      img{
+        width:100%;
+        max-width: 200px;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px){
   .fixed-dialog{
     position: fixed;
     top: 50px;
-    left: 50px; 
+    left: 50px;
     width:400px !important;
   }
 }
