@@ -66,6 +66,10 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="#services">УСЛУГИ</a></li>
                                 <li><a href="#prices">СТОИМОСТЬ</a></li>
+                                <li><a href="#priceQuestion">Узнать цену</a></li>
+                                <li><a href="#how_it_work">Как работает</a></li>
+                                <li><a href="#questions">Задайте вопрос</a></li>
+                                <li><a href="#comments">Комменты</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </nav>
@@ -74,29 +78,48 @@
         </header>
 
         <!-- Services description section -->
-        <section style="background-color:rgb(235, 222, 219); color:black" id="services">
+        <section class="light services">
+            <div class="anchor" id="services"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
                         <h1>Услуги</h1>
                         <ul>
                             <li>
-                                Покупка товаров с любых интернет-магазинов, торговых площадок или аукционов Польши и стран ЕС.
+                                <div>
+                                  <img src="img/services/purchase.png"/>
+                                </div>
+                                <span>Покупка товаров с любых интернет-магазинов, торговых площадок или аукционов Польши и стран ЕС.</span>
                             </li>
                             <li>
-                                Помощь в доставке товаров в города РБ и РФ.
+                              <div>
+                                <img src="img/services/in hands.svg"/>
+                              </div>
+                              <span>Помощь в доставке товаров в города РБ и РФ.</span>
                             </li>
                             <li>
-                                Индивидуальная работа с клиентом. Помощь при поиске необходимых товаров.
+                              <div>
+                                <img src="img/services/service.svg"/>
+                              </div>
+                              <span>Индивидуальная работа с клиентом. Помощь при поиске необходимых товаров.</span>
                             </li>
                             <li>
-                                Доставка купленных товаров на наш склад в Белостоке.
+                              <div>
+                                <img src="img/services/delivery.svg"/>
+                              </div>
+                              <span>Доставка купленных товаров на наш склад в Белостоке.</span>
                             </li>
                             <li>
-                                Возврат 23% VAT (Tax Free) с любых Ваших покупок.
+                              <div>
+                                <img src="img/services/tax return.png"/>
+                              </div>
+                              <span>Возврат 23% VAT (Tax Free) с любых Ваших покупок.</span>
                             </li>
                             <li>
-                                Объединение Ваших покупок с разных мест стоимостью менее 200zl
+                              <div>
+                                <img src="img/services/union.svg"/>
+                              </div>
+                              <span>Объединение Ваших покупок с разных мест стоимостью менее 200zl.</span>
                             </li>
                         </ul>
                     </div>
@@ -105,7 +128,8 @@
         </section>
 
         <!-- Services price section -->
-        <section style="background-color:#886F56; color:white;">
+        <section class="dark prices">
+            <div class="anchor" id="prices"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -136,7 +160,8 @@
         </section>
 
         <!-- Get-price section -->
-        <section style="background-color:rgb(235, 222, 219); color:black;">
+        <section class="light priceQuestion">
+            <div class="anchor" id="priceQuestion"></div>
             <div class="container">
                 <div class="row section-row">
                     <div class="col-xs-12 col-md-5">
@@ -168,7 +193,8 @@
         </section>
 
         <!-- Wokrking algorythm section -->
-        <section style="background-color:rgb(158, 129, 101); color:white;">
+        <section class="dark how_it_work">
+            <div class="anchor" id="how_it_work"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -182,12 +208,12 @@
                             </div>
                         </div>
                         <div class="order-alg-step row">
-                            <div class="step-illustr col-sm-12 col-md-4">
-                                <img src="img/form-cv.png"/>
-                            </div>
                             <div class="step-text col-sm-12 col-md-8">
                                 Далее оформляете покупку у нас на сайте через форму быстрого заказа. Также можно оформить заказ на наших страничках Вконтакте, Одноклассники, Facebook, Instagram, также принимаем заказы в Telegram.
                                 <br/><input type="button" id="quick-order-button" value="Форма быстрого заказа" class="site-button-1"/>
+                            </div>
+                            <div class="step-illustr col-sm-12 col-md-4">
+                                <img src="img/form-cv.png"/>
                             </div>
                         </div>
                         <div class="order-alg-step row">
@@ -204,11 +230,11 @@
                             </div>
                         </div>
                         <div class="order-alg-step row">
-                            <div class="step-illustr col-sm-12 col-md-4">
-                                <img src="img/location.png"/>
-                            </div>
                             <div class="step-text col-sm-12 col-md-8">
                                 Забираете Ваш заказ у нас со склада в Белостоке. При отсутствии возможности попасть к нам на склад, мы можем помочь вам с доставкой в города РБ и РФ.
+                            </div>
+                            <div class="step-illustr col-sm-12 col-md-4">
+                                <img src="img/location.png"/>
                             </div>
                         </div>
                     </div>
@@ -217,8 +243,9 @@
         </section>
 
         <!-- Questions section -->
-        <section style="background-color:rgb(235, 222, 219); color:black;" class="questions">
-                <div class="container">
+        <section class="light questions">
+            <div class="anchor" id="questions"></div>
+            <div class="container">
                     <div class="row section-row">
                         <div class="col-xs-12 col-md-3 image-container">
                             <img src="img/question.png"/>
@@ -246,10 +273,11 @@
                         </div>
                     </div>
                 </div>
-            </section>
+        </section>
 
         <!-- VK comments section -->
         <section>
+            <div class="anchor" id="comments"></div>
             <div class="container">
                 <div class="row" id="wk-widget-row">
                     <div class="col-xs-12">
