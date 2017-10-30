@@ -7,6 +7,12 @@ $(window).on('resize', function() {
   checkWidth();
 });
 
+$(".navbar-nav li a").click(function() {
+  var width = $(window).width();
+  if (width < 768) {
+    $(".navbar-toggle").click();
+  }
+});
 
 
 $(window).bind('scroll', function() {
