@@ -92,6 +92,23 @@ header {
   font-family: Cabin, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
   text-transform: uppercase;
+
+  .collapse{
+      text-align: center;
+      position: relative;
+
+
+      .navbar-nav {
+        margin: 0 auto;
+        display: inline-block;
+        float: none;
+
+        li{
+          float: none;
+          display: inline-block;
+        }
+      }
+  }
 }
 
 .navbar.fixed {
@@ -122,6 +139,7 @@ header {
   color: white;
   font-weight: bold;
 }
+
 
 .navbar-default .navbar-toggle {
   border: none;
@@ -255,7 +273,7 @@ section {
   .anchor {
     display: block;
     position: relative;
-    top: -70px;
+    top: -100px;
     visibility: hidden;
   }
 
@@ -327,7 +345,7 @@ section {
       .step-text {
         padding: 50px 20px;
         font-weight: bold;
-        
+
         .site-button-1 {
           margin: 5px auto;
           display: block;
@@ -343,6 +361,20 @@ section {
 
   .navbar-toggle {
     background-color: @baseColor;
+  }
+
+  .navbar {
+    .collapse{
+        text-align: left;
+        position: relative;
+
+        .navbar-nav {
+          li{
+            float: none;
+            display: block;
+          }
+        }
+    }
   }
 
   .step-illustr {
