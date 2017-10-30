@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
+        <title>Dostavka24</title>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <meta name="description" content="">
@@ -13,30 +14,44 @@
 
         <link rel="stylesheet" href="css/bootstrap.css"/>
         <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet/less" href="css/main.less">
+        <link rel="stylesheet" href="css/loader.css">
+
+        <script src="js/vendor/less.min.js"></script>
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
         <header>
             <div class="container" >
                 <div class="row" id="header">
-                    <div class="col-sm-12 col-md-6" id="logo-col">
-                        <img src="img/logo3.png" id="logo-image"/>
+                    <div class="col-xsm-12 col-sm-6 col-md-3" id="logo-col">
+                        <a href="/"><img src="img/logo3.png" id="logo-image"/></a>
                     </div>
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-xsm-12 col-sm-6 col-md-3" id="working-hours-col">
+                        <div id="working-hours">
+                            Приём заказов: 9 - 18<br>
+                            Обработка заказов: круглосуточно
+                        </div>
+                    </div>
+                    <div class="col-xsm-12 col-sm-6 col-md-3">
                         <div id="phones">
-                            <img src="img/mts.png"> +375 29 123-34-12
+                            <img src="img/telegram.ico"> +48513622401<br>
+                            <img src="img/mts.png"> +375(33)6278273
                         </div>
                         <div id="social">
-                            <a href="#"><img src="img/Vk.png"/></a>
+                            <a href="https://vk.com/id428100898"><img src="img/Vk.png"/></a>
                             <a href="#"><img src="img/instagram.png"/></a>
                             <a href="#"><img src="img/Facebook.png"/></a>
+                            <a href="#"><img src="img/ok.png"/></a>
                         </div>
+                    </div>
+                    <div class="col-xsm-12 col-sm-12 col-md-3" id="header-button-column">
+                        <input type="button" id="order-call-button" value="Заказать звонок" class="site-button-1"/>
                     </div>
                 </div>
                 <div class="row">
@@ -44,48 +59,229 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                Меню                            
+                                Меню
                             </button>
                             </div>
-                        
+
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">О нас</span></a></li>
-                                <li><a href="#">Услуги</a></li>
+                                <li><a href="/">Главная</a></li>
+                                <li><a href="#services">УСЛУГИ</a></li>
+                                <li><a href="#prices">СТОИМОСТЬ</a></li>
+                                <li><a href="#priceQuestion">Узнать цену</a></li>
+                                <li><a href="/catalog.html">Каталог сайтов</a></li>
+                                <li><a href="#how_it_work">Как работает</a></li>
+                                <li><a href="#questions">Задайте вопрос</a></li>
+                                <li><a href="#comments">Отзывы</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </nav>
                 </div>
             </div>
         </header>
-        <section style="background-color:bisque">
+
+        <!-- Services description section -->
+        <section class="light services">
+            <div class="anchor" id="services"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1>Section #1</h1>
-                        text<br/>
-                        text<br/>
-                        text<br/>
-                        text<br/>
+                        <h1>Услуги</h1>
+                        <ul>
+                            <li>
+                                <div>
+                                  <img src="img/services/purchase.png"/>
+                                </div>
+                                <span>Покупка товаров с любых интернет-магазинов, торговых площадок или аукционов Польши и стран ЕС.</span>
+                            </li>
+                            <li>
+                              <div>
+                                <img src="img/services/in hands.svg"/>
+                              </div>
+                              <span>Помощь в доставке товаров в города РБ и РФ.</span>
+                            </li>
+                            <li>
+                              <div>
+                                <img src="img/services/service.svg"/>
+                              </div>
+                              <span>Индивидуальная работа с клиентом. Помощь при поиске необходимых товаров.</span>
+                            </li>
+                            <li>
+                              <div>
+                                <img src="img/services/delivery.svg"/>
+                              </div>
+                              <span>Доставка купленных товаров на наш склад в Белостоке.</span>
+                            </li>
+                            <li>
+                              <div>
+                                <img src="img/services/tax return.png"/>
+                              </div>
+                              <span>Возврат 23% VAT (Tax Free) с любых Ваших покупок.</span>
+                            </li>
+                            <li>
+                              <div>
+                                <img src="img/services/union.svg"/>
+                              </div>
+                              <span>Объединение Ваших покупок с разных мест стоимостью менее 200zl.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section style="background-color:burlywood">
+
+        <!-- Services price section -->
+        <section class="dark prices">
+            <div class="anchor" id="prices"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1>Section #2</h1>
-                        text<br/>
-                        text<br/>
-                        text<br/>
-                        text<br/>
+                        <h1>Стоимость услуг</h1>
+                        <ul>
+                            <li>5% - комиссия для заказа более 8.000 ZL</li>
+                            <li>6% - комиссия для заказа от 1000 до 7.999 ZL</li>
+                            <li>9% - комиссия для заказа от 200 до 999 ZL</li>
+                        </ul>
+                        <p>
+                            Минимальная комиссия dostavka24 составляет 25zl за заказ от одного продавца
+                        </p>
+                        <p>
+                            Возврат VAT производится в размере 23% от полной стоимости товара.
+                        </p>
+                        <p>
+                            Полная стоимость товара = стоимость покупки + стоимость доставки по Польше + комиссия dostavka24.
+                        </p>
+                        <p>
+                            5% - комиссия для клиентов после достижения общей суммы заказов 15.000 ZL
+                        </p>
+                        <p>
+                            Также для постоянных клиентов существуют различные бонусы и скидки.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Get-price section -->
+        <section class="light priceQuestion">
+            <div class="anchor" id="priceQuestion"></div>
+            <div class="container">
+                <div class="row section-row">
+                    <div class="col-xs-12 col-md-5">
+                        <img src="img/online-shopping.jpg" style="width:100%;"/>
+                    </div>
+                    <div class="col-xs-12 col-md-7" style="background-color: rgb(235, 222, 219)">
+                        <h1>Узнать цену</h1>
+                        Заполните форму и мы поможем найти интересующий вас товар по оптимальной цене и доставим его в течение 7 дней.
+                        <form id="get-price-form">
+                            <input type="hidden" name="emailType" value="getPrice"/>
+                            <div class="form-group">
+                                <label for="productTitle">Модель товара</label>
+                                <input type="text" required class="form-control" name="productTitle" placeholder="Кеды Converse AllStar">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
+                                <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
+                            </div>
+                            <button type="submit" id="submit-order-price-request-button" class="btn site-button-1" style="width:100%">
+                                <div>
+                                    <span id="get-price-button-text">Узнать цену</span>
+                                    <div id="get-price-loader">&nbsp;</div>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wokrking algorythm section -->
+        <section class="dark how_it_work">
+            <div class="anchor" id="how_it_work"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Как работает dostavka24</h1>
+                        <div class="order-alg-step row">
+                            <div class="step-illustr col-sm-12 col-md-4">
+                                <img src="img/choose-site.png"/>
+                            </div>
+                            <div class="step-text col-sm-12 col-md-8">
+                                Выбираете покупки в любом интернет-магазине, на торговой площадке, аукционе Польши или стран ЕС.
+                            </div>
+                        </div>
+                        <div class="order-alg-step row">
+                            <div class="step-illustr col-sm-12-8 col-md-4 col-md-push-8">
+                                <img src="img/form-cv.png"/>
+                            </div>
+                            <div class="step-text col-sm-12 col-md-8 col-md-pull-4">
+                                Далее оформляете покупку у нас на сайте через форму быстрого заказа. Также можно оформить заказ на наших страничках Вконтакте, Одноклассники, Facebook, Instagram, также принимаем заказы в Telegram.
+                                <br/><input type="button" id="quick-order-button" value="Форма быстрого заказа" class="site-button-1" style="font-size:1.1em"/>
+                            </div>
+                        </div>
+                        <div class="order-alg-step row">
+                            <div class="step-illustr col-sm-12 col-md-4">
+                                <img src="img/pay.png"/>
+                            </div>
+                            <div class="step-text col-sm-12 col-md-8">
+                                    Оплачиваете покупку. Оплатить заказ можно 3-мя способами:
+                                    <ol>
+                                        <li>Переводом на электронный счет (MasterCard)</li>
+                                        <li>Передать через контактное лицо в Гродно или Минске.</li>
+                                        <li> Денежным переводом по средствам служб Western Union, Unistream, Contact, Золотая корона. </li>
+                                    </ol>
+                            </div>
+                        </div>
+                        <div class="order-alg-step row">
+                            <div class="step-illustr col-sm-12 col-md-4 col-md-push-8">
+                                <img src="img/location.png"/>
+                            </div>
+                            <div class="step-text col-sm-12 col-md-8 col-md-pull-4">
+                                Забираете Ваш заказ у нас со склада в Белостоке. При отсутствии возможности попасть к нам на склад, мы можем помочь вам с доставкой в города РБ и РФ.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions section -->
+        <section class="light questions">
+            <div class="anchor" id="questions"></div>
+            <div class="container">
+                    <div class="row section-row">
+                        <div class="col-xs-12 col-md-3 image-container">
+                            <img src="img/question.png"/>
+                        </div>
+                        <div class="col-xs-12 col-md-9" style="background-color: rgb(235, 222, 219)">
+                            <h1>Задайте нам вопрос</h1>
+                            Если у Вас остались вопросы - Вы можете задать их с помощью формы ниже.
+                            <form id="questions-form">
+                                <input type="hidden" name="emailType" value="question"/>
+                                <div class="form-group">
+                                    <label for="question">Ваш вопрос</label>
+                                    <input type="text" required class="form-control" name="question" placeholder="Ваш вопрос">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
+                                    <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
+                                </div>
+                                <button type="submit" id="submit-question-button" class="btn site-button-1" style="width:100%">
+                                    <div>
+                                        <span id="questions-form-button-text">Спросить</span>
+                                        <div id="questions-form-button-loader">&nbsp;</div>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- VK comments section -->
         <section>
+            <div class="anchor" id="comments"></div>
             <div class="container">
                 <div class="row" id="wk-widget-row">
                     <div class="col-xs-12">
@@ -95,11 +291,82 @@
             </div>
         </section>
 
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <div id="order-call-popup">
+            <div id="order-call-popup-page1">
+                <h4>Пожалуйста, заполните форму и мы Вам перезвоним</h4>
+                <form id="order-call-form">
+                    <input type="hidden" name="emailType" value="callOrder"/>
+                    <div class="form-group">
+                        <label for="customerName">Ваше имя</label>
+                        <input type="text" required class="form-control" name="customerName" placeholder="Игорь">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
+                        <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
+                    </div>
+                    <button type="submit" id="submit-call-button" class="btn site-button-1">
+                        <div>
+                            <span id="call-order-form-button-text">Жду звонка</span>
+                            <div id="call-order-form-button-loader">&nbsp;</div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+            <div id="order-call-popup-page2">
+                <img src="img/success.png"/><br/>
+                <h4>Звонок заказан. Мы свяжемся с Вами в ближайшее время.</h4>
+            </div>
+        </div>
+
+        <div id="quick-order-popup">
+            <div id="quick-order-popup-page1">
+                <h4>Форма быстрого заказа</h4>
+                <form id="quick-order-form">
+                    <input type="hidden" name="emailType" value="quickOrder"/>
+                    <div class="form-group">
+                        <label for="productUrl">Вставьте сюда ссылк(у/и) на страницу товара:</label>
+                        <textarea type="text" required class="form-control" name="productUrl" placeholder="http://allegro.pl/buty-swiecace-led-sportowe-podswietlane-adidasy-i6732936520.html"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Напишите сюда описание к товару:</label>
+                        <textarea type="text" required class="form-control" name="productDescription" placeholder="Размер кросовок: 42 EU"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Номер телефона (с кодом оператора)</label>
+                        <input type="text" required class="form-control" pattern="^[0-9]{9}$" name="phoneNumber" placeholder="292479699">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш E-mail</label>
+                        <input type="email" required class="form-control" name="email" placeholder="ivan.taranov@mail.ru">
+                    </div>
+                    <button type="submit" id="submit-call-button" class="btn site-button-1">
+                        <div>
+                            <span id="quick-order-form-button-text">Заказать</span>
+                            <div id="quick-order-form-button-loader">&nbsp;</div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+            <div id="quick-order-popup-page2">
+                <img src="img/success.png"/><br/>
+                <h4>Ваша заявка принята. Спасибо за заказ!</h4>
+            </div>
+        </div>
+
+        <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
         <script src="js/plugins.js"></script>
+        <script src="js/backend-service.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/call-order-form.js"></script>
+        <script src="js/quick-order-form.js"></script>
+        <script src="js/get-price-form.js"></script>
+        <script src="js/questions-form.js"></script>
 
         <!-- Put this script tag to the <head> of your page -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>
