@@ -78,9 +78,10 @@
         }
 
         private static function getQuickOrderBody(){
-            $description=preg_replace( "/\r|\n/", "<br>", $_POST["productDescription"] );
+            $description = preg_replace( "/\r|\n/", "<br>", $_POST["productDescription"] );
+            $links = preg_replace( "/\r|\n/", "<br>", $_POST["productUrl"] );
             $body = "Быстрый заказ<br/>
-            Ссылка на страницу товара: <a href=\"".$_POST["productUrl"]."\">".$_POST["productUrl"]."</a><br>
+            Ссылка на страницу товара: <a href=\"".$_POST["productUrl"]."\">".$links."</a><br>
             Описание товара:<br>".
             $description."<br>
             Номер телефона: ".$_POST["phoneNumber"]."<br>
